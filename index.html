@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .menubtn {
+            text-align: left;
+            margin-left: 20px;
+            display: block;
+        }
+
+        .menu {
+            background-color: gray;
+            height: 100%;
+            width: 0px;
+            position: absolute;
+            top: 0px;
+            overflow: hidden;
+            padding-top: 0px;
+            transition: 0.5s;
+        }
+
+        a {
+
+            text-decoration: none;
+            padding: 20px;
+            font-size: 40px;
+            color: rgb(206, 198, 198);
+        }
+
+        a:hover {
+            color: rgb(253, 251, 251);
+        }
+
+        .linklist {
+            margin-top: 80px;
+        }
+
+        span {
+            float: right;
+            font-size: 50px;
+            color: rgb(206, 198, 198);
+            margin-right: 20px;
+            font-weight: bold;
+            margin-top: 0px;
+        }
+
+        span:hover {
+            color: rgb(253, 251, 251);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Slide nav</h1>
+    <h1 class="menubtn" onclick="show()">&#8801; Menu</h1>
+    <div class="menu">
+        <span onclick="closemenu()">&times</span>
+        <div class="linklist">
+            <a href="">About</a>
+            <a href="">Contacts</a>
+            <a href="">Blog</a>
+            <a href="">Products</a>
+        </div>
+    </div>
+    <script>
+        menu = document.getElementsByClassName("menu")[0];
+        function show() {
+            menu.style.width = "250px";
+        }
+        function closemenu() {
+            menu.style.width = "0px";
+        }
+    </script>
+</body>
+
+</html>

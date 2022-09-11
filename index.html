@@ -12,16 +12,6 @@
             color: white;
         }
 
-        h1 {
-            text-align: center;
-        }
-
-        .menubtn {
-            text-align: left;
-            margin-left: 20px;
-            display: block;
-        }
-
         .menu {
             background-color: gray;
             height: 100%;
@@ -33,42 +23,48 @@
             transition: 0.5s;
         }
 
-        a {
+        .content {
+            transition: 0.5s;
+        }
 
-            text-decoration: none;
-            padding: 20px;
-            font-size: 40px;
+        h2 {
+            text-align: right;
+            margin-right: 10px;
+            font-size: 70px;
             color: rgb(206, 198, 198);
+
+        }
+
+        h2:hover {
+            color: rgb(253, 251, 251);
+
+        }
+
+        a {
+            color: rgb(206, 198, 198);
+            text-decoration: none;
+            display: block;
+            padding: 20px;
+            font-size: 30px;
         }
 
         a:hover {
             color: rgb(253, 251, 251);
         }
 
-        .linklist {
-            margin-top: 80px;
+        .menubtn {
+            cursor: pointer;
         }
 
-        span {
-            float: right;
-            font-size: 50px;
-            color: rgb(206, 198, 198);
-            margin-right: 20px;
-            font-weight: bold;
-            margin-top: 0px;
-        }
-
-        span:hover {
-            color: rgb(253, 251, 251);
+        .closebtn {
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <h1>Slide nav</h1>
-    <h1 class="menubtn" onclick="show()">&#8801; Menu</h1>
     <div class="menu">
-        <span onclick="closemenu()">&times</span>
+        <h2 onclick="closemenu()" class="closebtn">&times</h2>
         <div class="linklist">
             <a href="">About</a>
             <a href="">Contacts</a>
@@ -76,13 +72,38 @@
             <a href="">Products</a>
         </div>
     </div>
+    <div class="content">
+        <h1>Slide nav with page content pushing
+        </h1>
+        <h1 onclick="show()" class="menubtn">&#9776 Menu</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est dolorem earum quasi corrupti, quibusdam ullam
+            soluta magnam repellendus nemo distinctio? Ea illo accusantium magni hic provident commodi, quos alias modi.
+        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est dolorem earum quasi corrupti, quibusdam ullam
+            soluta magnam repellendus nemo distinctio? Ea illo accusantium magni hic provident commodi, quos alias modi.
+        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est dolorem earum quasi corrupti, quibusdam ullam
+            soluta magnam repellendus nemo distinctio? Ea illo accusantium magni hic provident commodi, quos alias modi.
+        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est dolorem earum quasi corrupti, quibusdam ullam
+            soluta magnam repellendus nemo distinctio? Ea illo accusantium magni hic provident commodi, quos alias modi.
+        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est dolorem earum quasi corrupti, quibusdam ullam
+            soluta magnam repellendus nemo distinctio? Ea illo accusantium magni hic provident commodi, quos alias modi.
+        </p>
+    </div>
     <script>
         menu = document.getElementsByClassName("menu")[0];
+        content = document.getElementsByClassName("content")[0];
+
         function show() {
             menu.style.width = "250px";
+            content.style.width = "1050px";
+            content.style.float = "right";
         }
         function closemenu() {
-            menu.style.width = "0px";
+            menu.style.width = "0%";
+            content.style.width = "100%";
         }
     </script>
 </body>
